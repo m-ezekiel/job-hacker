@@ -26,8 +26,6 @@ user <- getUser(userName)
 ###### `r paste0("Created: ", user$created)`
 
 
-
-
 ```{r, echo=FALSE}
 stats_tbl <- data.frame(tweets=user$statusesCount, 
                         friends=user$friendsCount,
