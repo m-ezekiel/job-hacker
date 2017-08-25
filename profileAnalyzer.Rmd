@@ -1,7 +1,7 @@
 ---
 title: "Twitter Profile Analyzer"
-author: "Compiled for private client by Mario Ezekiel H. (m-ezekiel.com)"
-date: "Summer/Fall, 2017"
+#author: "Mario Ezekiel H. (m-ezekiel.com)"
+#date: "Summer/Fall, 2017"
 output: html_document
 ---
 
@@ -15,26 +15,44 @@ source('Functions/userTimeline_stats_fXn.R')
 
 ```{r, echo=FALSE}
 # Setup
-userName <- "fathominfo"
-n <- 1
+userName <- "WolfieChristl"
+n <- 10
 user <- getUser(userName)
 ```
 
 
 ## <span style="color:#336699">`r paste0("@", userName, " :: ", n, " most recent tweets.")`</span>
 #### <span style="color:#336699">`r user$description`</span>
-###### `r paste0("Created: ", user$created)`
+##### `r paste0("URL: ", user$url)`
+##### `r paste0("Created: ", user$created)`
 
 
 ```{r, echo=FALSE}
+# Basic stats table
 stats_tbl <- data.frame(tweets=user$statusesCount, 
                         friends=user$friendsCount,
                         followers=user$followersCount,
                         likes=user$favoritesCount,
                         listed=user$listedCount,
-                        protected=user$protected,
-                        verified=user$verified)
+                        verified=user$verified,
+                        protected=user$protected)
 stats_tbl
+```
+
+
+```{r, echo=FALSE}
+# Calculate account age for post frequency
+created <- as.Date(user$created, format = "%Y-%m-%d")
+today <- Sys.Date()
+account_age <- as.numeric(today - created)
+
+dailyPosts <- signif(user$statusesCount / account_age, 2)
+
+# Derived stats table
+derived_tbl <- data.frame(influence=round(user$followersCount/user$friendsCount),
+                          dailyPosts=dailyPosts,
+                          interactionLvl="")
+derived_tbl
 ```
 
 
