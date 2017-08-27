@@ -1,7 +1,6 @@
 # Twitter Friends Downloader
 # c. 2017-08-24
 
-library(dplyr)
 source("Functions/twitterConfig.R")
 rm(list = ls())
 
@@ -37,6 +36,3 @@ detach(ufl)
 # Write Data
 filename <- paste0("friendList_data/", userName, "_friendList.csv")
 write.csv(friendList, file = filename)
-
-favs <- user$getFavorites(n = 756)
-twListToDF(favs) -> favs_df

@@ -1,7 +1,6 @@
 # Twitter Favorites Downloader
 # c. 2017-08-24
 
-library(dplyr)
 source("Functions/twitterConfig.R")
 rm(list = ls())
 
