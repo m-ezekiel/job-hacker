@@ -15,7 +15,7 @@ source('Functions/userTimeline_stats_fXn.R')
 
 ```{r, echo=FALSE}
 # Setup
-userName <- "WolfieChristl"
+userName <- "m_ezkiel"
 n <- 10
 user <- getUser(userName)
 ```
@@ -49,9 +49,9 @@ account_age <- as.numeric(today - created)
 dailyPosts <- signif(user$statusesCount / account_age, 2)
 
 # Derived stats table
-derived_tbl <- data.frame(influence=round(user$followersCount/user$friendsCount),
+derived_tbl <- data.frame(influence=signif(user$followersCount/user$friendsCount, 2),
                           dailyPosts=dailyPosts,
-                          interactionLvl="")
+                          interactionLvl="NULL")
 derived_tbl
 ```
 
