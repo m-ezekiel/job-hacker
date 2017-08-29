@@ -1,6 +1,9 @@
+.DS_Store
+
 # R Files
 Functions/twitterConfig.R
 profileAnalyzer.html
+job-hacker_sketchpad.R
 
 # Data directory
 data/*
