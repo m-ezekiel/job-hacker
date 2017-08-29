@@ -1,0 +1,14 @@
+----------------------
+| Job Hacker - Notes |
+----------------------
+
+
+August 27, 2017
+
+Sorting friendList data by protected account status may surface personal contacts.  For example the protected account, @mkelly007, active since Feb. 2009 with 41k+ followers and 29k+ tweets.
+
+This is a job for dplyr.
+
+
+August 29, 2017
+
