@@ -2,6 +2,9 @@
 Functions/twitterConfig.R
 profileAnalyzer.html
 
+# Data directory
+data/*
+
 # History files
 .Rhistory
 .Rapp.history
