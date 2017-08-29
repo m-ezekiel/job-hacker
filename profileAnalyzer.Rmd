@@ -15,8 +15,8 @@ source('Functions/userTimeline_stats_fXn.R')
 
 ```{r, echo=FALSE}
 # Setup
-userName <- "m_ezkiel"
-n <- 10
+userName <- "_primor_"
+n <- 60
 user <- getUser(userName)
 ```
 
