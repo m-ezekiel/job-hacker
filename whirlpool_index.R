@@ -1,8 +1,5 @@
 
 
-friends <- read.csv("friendList_data/m_ezkiel_friendList.csv", header = TRUE)
-followers <- read.csv("followerList_data/m_ezkiel_followerList.csv", header = TRUE)
-
 everyone <- rbind(friends, followers)
 
 desc_text <- gsub("[.,?/!:;\"()]", "", as.character(everyone$description))
@@ -18,4 +15,4 @@ unlist(strsplit(wp_descriptions, split = " ")) -> words
 grep("@", words) -> wpTokens
 gsub("@", "", words[wpTokens]) -> self_associations
 
-sort(unique(self_associations))
+targets <- sort(unique(self_associations))

@@ -14,7 +14,9 @@ userName <- "m_ezkiel"
 list.files("data/", pattern = userName)
 
 # Import data
-friends <- read.csv(file = paste0("data/", userName, "_Friends.csv"))
-followers <- read.csv(file = paste0("data/", userName, "_Followers.csv"))
-favorites <- read.csv(file = paste0("data/", userName, "_Favorites.csv"))
+friends <- read.csv(file = paste0("data/", userName, "_Friends.csv"), stringsAsFactors = TRUE)
+followers <- read.csv(file = paste0("data/", userName, "_Followers.csv"), stringsAsFactors = TRUE)
+favorites <- read.csv(file = paste0("data/", userName, "_Favorites.csv"), stringsAsFactors = TRUE)
 
+# Clean-up
+rm(userName, favorites, followers, friends)

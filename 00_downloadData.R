@@ -10,15 +10,17 @@ source("Functions/dL_favorites.R")
 # Define user
 dL_userName <- "m_ezkiel"
 
-# Download data
-friendList <- dL_friends(dL_userName)
-followerList <- dL_followers(dL_userName)
-favoritesList <- dL_favorites(dL_userName)  # rate limit = 200
 
-# Write data
-write.csv(friendList, file = paste0("data/", dL_userName, "_Friends.csv"))
-write.csv(followerList, file = paste0("data/", dL_userName, "_Followers.csv"))
-write.csv(favoritesList, file = paste0("data/", dL_userName, "_Favorites.csv"))
+# Download and write data
+favoritesList <- dL_favorites(dL_userName)  # rate limit = 200
+write.csv(favoritesList, file = paste0("data/", dL_userName, "_Favorites.csv"), row.names = FALSE)
+
+friendList <- dL_friends(dL_userName)
+write.csv(friendList, file = paste0("data/", dL_userName, "_Friends.csv"), row.names = FALSE)
+
+followerList <- dL_followers(dL_userName)
+write.csv(followerList, file = paste0("data/", dL_userName, "_Followers.csv"), row.names = FALSE)
+
 
 # Clean-up
 rm(dL_userName, favoritesList, followerList, friendList)

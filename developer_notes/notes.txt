@@ -13,3 +13,10 @@ This is a job for dplyr.
 August 29, 2017
 
 Created individual download functions for interacting with the twitter API.  It's unclear whether favoritesList$created refers to the creation of the favorited post or the time at which it was favorited.
+
+How can I identify accounts, or topics based on the downloaded data?  I can create topic clusters based on descriptions.
+
+
+August 31, 2017
+
+For some reason I was following an account with an everage of 23 daily posts with no kind of relevant content to my interests.  @rrjriosfernand1.  Maybe I wanted to keep an example of a spam account.
